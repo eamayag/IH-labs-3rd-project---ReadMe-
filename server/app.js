@@ -68,25 +68,17 @@ app.use(session({
 }));
 require('./passport')(app);
 
-
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
-
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
-
-
 
 const authRouter = require('./routes/auth');
 const genericCrud = require('./routes/genericCRUD');
 app.use('/api/auth', authRouter);
 app.use('/api/user', genericCrud(require('./models/User')));
-
-
 
 module.exports = app;

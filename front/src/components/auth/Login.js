@@ -1,12 +1,11 @@
-// auth/Signup.js
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import AuthService from './AuthService'
+import { Redirect } from 'react-router-dom';
+import AuthService from './AuthService';
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: '', redirect: false };
     this.service = new AuthService();
   }
 
@@ -20,10 +19,12 @@ class Login extends Component {
         this.setState({
           username: username,
           password: password,
+          redirect: true,
           error: false
         });
 
         this.props.getUser(response)
+        //return <Redirect to={{pathname: '/profile'}} /> NO FUNCIONA!!!!!
       })
       .catch(error => {
         this.setState({

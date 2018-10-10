@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const passport = require('passport');
 
-
 const login = (req, user) => {
   return new Promise((resolve,reject) => {
     req.login(user, err => {
@@ -21,8 +20,6 @@ const login = (req, user) => {
   })
 }
 
-
-// SIGNUP
 router.post('/signup', (req, res, next) => {
 
   const {username, password} = req.body;
@@ -49,7 +46,7 @@ router.post('/signup', (req, res, next) => {
     }).save();
   })
   .then( savedUser => login(req, savedUser)) // Login the user using passport
-  .then( user => res.json({status: 'signup & login successfully', user})) // Answer JSON
+  .then( user => res.json({status: 200, user})) // Answer JSON
   .catch(e => next(e));
 });
 
@@ -68,7 +65,7 @@ router.post('/login', (req, res, next) => {
 });
 
 
-router.get('/currentuser', (req,res,next) => {
+router.get('/profile', (req,res,next) => {
   if(req.user){
     res.status(200).json(req.user);
   }else{

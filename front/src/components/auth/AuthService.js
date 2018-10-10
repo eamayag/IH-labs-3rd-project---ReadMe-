@@ -8,7 +8,7 @@ class AuthService {
       withCredentials: true
     });
   }
-
+  //rutas del back donde el front solicitará la info
   signup = (username, password) => {
     return this.service.post('/signup', {username, password})
     .then(response => response.data)
@@ -20,7 +20,7 @@ class AuthService {
   }
 
   loggedin = () => {
-    return this.service.get('/currentUser',)
+    return this.service.get('/profile')
     .then(response => response.data)
   }
 

@@ -5,7 +5,7 @@ const ConditionSchema = new Schema({
   username: {type: Schema.Types.ObjectId, ref: 'User'},
   bloodGroup: {type: String, enum: ['0+', '0-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-']},
   allergies: {type: String},
-  diagnosis: {type: String},l
+  diagnosis: {type: String},
 }, {
   timestamps: {
     createdAt: 'created_at',

@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-
-// import ProjectList from './components/projects/ProjectList';
 import Navbar from './components/navbar/Navbar';
-// import ProjectDetails from './components/projects/ProjectDetails';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
-import Contents from './components/contents/Contents'
+import Profile from './components/auth/Profile'
 
 class App extends Component {
-
   constructor(props){
     super(props)
     this.state = { loggedInUser: null };
@@ -55,7 +51,7 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-            <Contents></Contents>
+            <Profile></Profile>
           </header>
         </div>
       );
