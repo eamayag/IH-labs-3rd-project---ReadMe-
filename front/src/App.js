@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
-import Profile from './components/auth/Profile'
+import Profile from './components/auth/Profile';
 
 class App extends Component {
   constructor(props){
@@ -45,13 +45,16 @@ class App extends Component {
 
   render() {
     this.fetchUser()
-
+    //pendiente refactorizar, no consigo separar en un único return
+    //pendiente incluir redirect a profile, cambio de rutas
     if(this.state.loggedInUser){
       return (
         <div className="App">
           <header className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-            <Profile></Profile>
+            <Switch>
+              <Route exact path='/profile' component={Profile}/>
+            </Switch>
           </header>
         </div>
       );

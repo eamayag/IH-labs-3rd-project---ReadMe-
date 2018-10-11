@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import AuthService from './AuthService';
 
 class Login extends Component {
@@ -56,7 +56,8 @@ class Login extends Component {
           <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
 
-        <input type="submit" value="Login" />
+
+        <input type="submit" value="Login"/>
       </form>
 
       <h1>{this.state.error ? 'Error' : ''}</h1>
