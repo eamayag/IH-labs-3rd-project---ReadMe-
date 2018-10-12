@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import AuthService from './AuthService';
 
 class Login extends Component {
@@ -23,8 +23,7 @@ class Login extends Component {
           error: false
         });
 
-        this.props.getUser(response)
-        //return <Redirect to={{pathname: '/profile'}} /> NO FUNCIONA!!!!!
+        this.props.getUser(response);
       })
       .catch(error => {
         this.setState({
@@ -41,6 +40,7 @@ class Login extends Component {
   }
 
   render() {
+    if(this.state.redirect) return <Redirect to='/profile' />
 
     return (<div>
       <h3>Please, login to our site</h3>

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import AuthService from "./AuthService";
-import axios from "axios";
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
   constructor(props) {
@@ -23,7 +21,7 @@ class Profile extends Component {
   // }
 
   render() {
-    console.log(this.props)
+   
     return (
       <div>
         <h1>
@@ -31,6 +29,8 @@ class Profile extends Component {
         </h1>
 
         <button>Edit your profile!</button>
+        <Link to='/publicprofile'>See your public info!</Link>
+
       </div>
     );
   }
