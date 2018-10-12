@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 
-class Public extends Component {
+class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +26,7 @@ class Public extends Component {
     return (
       <div>
         <h1>
-          This is the public <em>ReadMe!</em> profile
+          Edit your <em>ReadMe!</em> profile
         </h1>
 
       </div>
@@ -34,4 +34,4 @@ class Public extends Component {
   }
 }
 
-export default Public;
+export default Edit;

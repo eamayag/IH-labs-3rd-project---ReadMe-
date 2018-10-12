@@ -28,7 +28,7 @@ class Profile extends Component {
           Welcome to your <em>ReadMe!</em> profile
         </h1>
 
-        <button>Edit your profile!</button>
+        <Link to='/edit'>Edit your profile!</Link>
         <Link to='/publicprofile'>See your public info!</Link>
 
       </div>

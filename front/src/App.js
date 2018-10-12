@@ -6,7 +6,8 @@ import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
 import Profile from './components/content/Profile';
-import Public from './components/content/PublicProfile'
+import Public from './components/content/PublicProfile';
+import Edit from './components/content/EditProfile'
 
 class App extends Component {
   constructor(props){
@@ -54,6 +55,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/profile" render={() => <Profile user={this.state.loggedInUser} />} />
               <Route exact path="/publicprofile" render={() => <Public user={this.state.loggedInUser} />} />
+              <Route exact path="/edit" render={() => <Edit user={this.state.loggedInUser} />} />
             </Switch>
           </header>
         </div>
