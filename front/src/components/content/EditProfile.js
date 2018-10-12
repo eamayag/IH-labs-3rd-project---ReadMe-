@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from 'axios'
 
 class Edit extends Component {
   constructor(props) {
@@ -9,17 +8,7 @@ class Edit extends Component {
     };
   }
 
-  getProfileData() {
-    let user = this.state.loggedInUser;
-    axios
-      .get(user)
-      .console.log(user)
-      .then(res => {
-        this.setState({ profile: res.data });
-        console.log(this.state.profile);
-      })
-      .catch(e => console.log("error in getting info"));
-  }
+
 
   render() {
    
