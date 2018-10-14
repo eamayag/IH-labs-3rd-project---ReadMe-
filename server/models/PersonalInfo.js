@@ -5,7 +5,7 @@ const personalInfoSchema = new Schema({
   username: {type: Schema.Types.ObjectId, ref: 'User'},
   profilePic: String,
   email: String,
-  role: {type:String, enum: ['usuario', 'cuidador']},
+  role: {type:String, enum: ['user', 'caregiver']},
   dateOfBirth: Date,
   phone: Number,
   address: String,

@@ -7,30 +7,44 @@ class Profile extends Component {
     super(props);
     this.state = {
       user: props.user,
-      profile: props.profile
+      //profile: props.profile
     };
+    this.connection = axios.create({
+      baseURL: 'http://localhost:3001/profile/',
+      withCredentials: true
+    })
+    this.getProfileData()
   }
 
-  getProfileData = (event) => {
-    axios.get(`http://localhost:3010/Profile/`)
+  getProfileData = () => {
+    this.connection.get('/')
       .then(res => {
-        console.log('entra') //this.setState({user: res.data})
+        this.setState({user: res.data})
       })
       .catch( error => console.log(error))
   }
  
   render() {
-   
     return (
       <div>
-        <h1>
-          Welcome to your <em>ReadMe!</em> profile
-        </h1>
-
         <Link to='/edit'>Edit your profile!</Link>
         <br></br>
-        <Link to='/publicprofile'>See your public info!</Link>
+        <Link to={"/publicprofile/" + this.state.user._id}>See your public info!</Link>
 
+        <h1>
+          Your <em>ReadMe!</em> info as a {this.state.user.role}:
+        </h1>
+        <p>
+          {this.state.user.profilePic}
+          Username: {this.state.user.username}
+          email: {this.state.user.email}
+          date of birth: {this.state.dateOfBirth}
+        </p>
+        <div>
+
+        </div>
+
+       
       </div>
     );
   }
