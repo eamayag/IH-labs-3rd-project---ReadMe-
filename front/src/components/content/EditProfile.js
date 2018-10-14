@@ -49,7 +49,6 @@ class Edit extends Component {
     .then(user =>this.setState({id:user._id}))
   })
 .catch(err => console.log(err))
-
   }
 
   

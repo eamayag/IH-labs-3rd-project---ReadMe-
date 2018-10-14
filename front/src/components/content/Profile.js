@@ -28,6 +28,7 @@ class Profile extends Component {
     return (
       <div>
         <Link to='/edit'>Edit your profile!</Link>
+        {/* render={() => <Profile user={this.state.loggedInUser} */}
         <br></br>
         <Link to={"/publicprofile/" + this.state.user._id}>See your public info!</Link>
 

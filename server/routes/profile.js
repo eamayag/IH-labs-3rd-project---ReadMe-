@@ -15,31 +15,36 @@ router.get('/', (req, res, next) => {
     edit
 })
 
+router.put('/:id', (req, res, next)=>{
+  User.findByIdAndUpdate(req.params.id, req.body)
+   .then(() => {
+    res.json({message: `updated id: ${req.params.id}`});
+   })
+   .catch(err => {
+    res.json(err);
+   })
+ })
 
-router.post('/:id', (req, res, next) => {
-  // const {id} = req.params;
-  // const object = _.pickBy(req.body, (e,k) => paths.includes(k));
-  // const updates = _.pickBy(object, _.identity);
-  // const { username, email } = req.body;
-let {id}= req.params;
-const{username, email}=req.body;
-
-
-  // User.findOneAndUpdate(id, updates ,{new:true} )
-  User.findByIdAndUpdate(id ,{$set:{username,email}} )
-.then((data)=>{
-  res.status(200).json(data)
+router.delete('/:id', (req, res, next)=>{
+User.findByIdAndDelete(req.params.id, req.body)
+  .then(() => {
+  res.json({message: `removed: ${req.params.id}`});
+  })
+  .catch(err => {
+  res.json(err);
+  })
 })
-.catch(next)
-})
-//   console.log(email, "entra")
-//     .then(obj => {
-//       res.status(200).json({status:'updated',obj});
-//     })
 
-//     .catch(next)
-// });
-
+// //HACE EL EDIT EN BACK: 
+// router.post('/:id', (req, res, next) => {
+// let {id}= req.params;
+// const{username, email}=req.body;
+//   User.findByIdAndUpdate(id ,{$set:{username,email}} )
+// .then((data)=>{
+//   res.status(200).json(data)
+// })
+// .catch(next)
+// })
 
 
 module.exports = router;
