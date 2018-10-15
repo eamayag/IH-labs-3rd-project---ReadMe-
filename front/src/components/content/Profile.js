@@ -10,14 +10,14 @@ class Profile extends Component {
       //profile: props.profile
     };
     this.connection = axios.create({
-      baseURL: 'http://localhost:3001/profile/',
+      baseURL: 'http://localhost:3001/',
       withCredentials: true
     })
     this.getProfileData()
   }
 
   getProfileData = () => {
-    this.connection.get('/')
+    this.connection.get('/profile')
       .then(res => {
         this.setState({user: res.data})
       })
