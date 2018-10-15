@@ -1,24 +1,18 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import ProfileService from "./ProfileService";
 
 class Edit extends Component {
   constructor(props) {
     super(props);
-    this.state = {  
-      username: '',
-      profilePic: '',
-      email: '',
-      role: '',
-      dateOfBirth: '',
-      phone: '',
-      address: '',
-      city: ''
-    };
+    this.state = {};
 
     this.connection = axios.create({
       baseURL: 'http://localhost:3001/profile',
       withCredentials: true
     })
+
+    this.profileService = new ProfileService();
   }
    
   //   this.connection.post('/', {username, email})
@@ -52,15 +46,21 @@ class Edit extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    this.setState({[name]: value})
+     
+    this.profileService.updateProfile(this.state)
+    .then(user => console.log(user))
+
+
   }
 
   handleChange = (event) => {  
-    let {username, password, profilePic, email, role, dateOfBirth, phone, address, city } = event.target;    
+ 
+    let {name, value} = event.target
+    this.setState({[name]: value})
   }
 
   render() {
-    let { username, password, profilePic, email, role, dateOfBirth, phone, address, city } = this.state;
+    let {profilePic, email, role, dateOfBirth, phone, address, city } = this.state;
     return (
       <div>
         <h1>
@@ -70,12 +70,7 @@ class Edit extends Component {
           <label>Profile photo:</label>
           <input type='file' name='profilePic' value={this.state.profilePic} onChange={ e => this.handleChange(e)}/>
           <br></br>
-          <label>Name:</label>
-          <input type='text' name='username' placeholder='name' value={this.state.username} onChange={ e => this.handleChange(e)}/>
-          <br></br>
-          <label>Password:</label>
-          <input type='password' name='password' placeholder='password' value={this.state.password} onChange={ e => this.handleChange(e)}/>
-          <br></br>
+    
           <label>email:</label>
           <input type='email' name='email' placeholder='email' value={this.state.email} onChange={ e => this.handleChange(e)}/>
           <br></br>

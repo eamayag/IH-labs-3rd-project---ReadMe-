@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 const User = require('../models/User');
-const PersonalInfo = require('../models/PersonalInfo');
 const Condition = require('../models/Condition');
 const Treatment = require('../models/Treatment');
 const _ = require('lodash');
@@ -14,14 +13,11 @@ router.get('/', (req, res, next) => {
     })
 })
 
-router.put('/:id', (req, res, next)=>{
-  User.findByIdAndUpdate(req.params.id, req.body)
-   .then(() => {
-    res.json({message: `updated id: ${req.params.id}`});
-   })
-   .catch(err => {
-    res.json(err);
-   })
+router.post('/', (req, res, next)=>{
+  const id = req.user._id;
+  User.findByIdAndUpdate(id, req.body.data, {new:true})
+   .then(user => res.status(200).json(user))
+   .catch(err => next(err))
  })
 
 router.delete('/:id', (req, res, next)=>{

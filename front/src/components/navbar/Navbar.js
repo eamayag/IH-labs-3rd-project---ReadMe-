@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import AuthService from '../auth/AuthService';
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = { loggedInUser: null };
+    this.state = { loggedInUser: null, redirect: false };
     this.service = new AuthService();
   }
 
@@ -14,10 +14,12 @@ class Navbar extends Component {
   }
 
   handleLogout = (e) => {
-    this.props.logout()
+    this.props.logout().then(() =>  this.setState({redirect: true}))
   }
 
   render() {
+    if(this.state.redirect) return (<Redirect to='/login' />)
+
     if (this.state.loggedInUser) {
       return (
         <nav className="nav-style">

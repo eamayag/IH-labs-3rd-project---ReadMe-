@@ -8,7 +8,7 @@ class Login extends Component {
     this.state = { username: '', password: '', redirect: false };
     this.service = new AuthService();
   }
-
+  
   handleFormSubmit = (event) => {
     event.preventDefault();
     const username = this.state.username;
