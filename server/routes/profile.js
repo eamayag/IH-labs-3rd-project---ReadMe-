@@ -12,7 +12,6 @@ router.get('/', (req, res, next) => {
     .then(response => res.status(200).json(response))
     .catch(err => {res.json(err);
     })
-    edit
 })
 
 router.put('/:id', (req, res, next)=>{
