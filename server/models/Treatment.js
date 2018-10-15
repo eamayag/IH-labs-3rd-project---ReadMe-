@@ -3,15 +3,10 @@ const Schema   = mongoose.Schema;
 
 const treatmentSchema = new Schema({
   username: {type: Schema.Types.ObjectId, ref: 'User'},
-  needsMedication: Boolean,
   drug: String,
   administration: String,
-  needsCallingContact: Boolean,
-  contactPerson: String,
-  contactPhone: Number,
-  needsAnyOther: Boolean,
   additionalInfo: String,  
-  needsCallingAnAmbulance: Boolean,
+  ambulance: Boolean,
 }, {
   timestamps: {
     createdAt: 'created_at',
