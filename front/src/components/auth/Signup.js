@@ -1,11 +1,12 @@
 // auth/Signup.js
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import AuthService from './AuthService'
 
 class Signup extends Component {
   constructor(props){
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { username: '', password: '', redirect: false };
     this.service = new AuthService();
   }
     
@@ -19,6 +20,7 @@ class Signup extends Component {
         this.setState({
             username: "", 
             password: "",
+            redirect: true
         });
         this.props.getUser(response.user)
     })
@@ -32,6 +34,8 @@ class Signup extends Component {
       
 
   render() {
+    if(this.state.redirect) return <Redirect to='/profile' />
+
     return(
       <div>
         <h3>Create your account:</h3>
