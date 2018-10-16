@@ -39,7 +39,11 @@ router.post('/signup', (req, res, next) => {
       password: hashPass
     }).save();
   })
-  .then( savedUser => login(req, savedUser)) // Login the user using passport
+  .then( savedUser => 
+    new Contact({username: User._id}).save(), 
+    new Condition({username: User._id}).save(), 
+    new Treatment({username: User._id}).save(),
+    login(req, savedUser)) // Login the user using passport
   .then( user => res.json({status: 200, user})) // Answer JSON
   .catch(e => next(e));
 });

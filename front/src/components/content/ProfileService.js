@@ -8,9 +8,10 @@ class ProfileService {
     });
   }
   //rutas del back donde el front solicitará la info
-  getProfile = (username, password) => {
-    return this.service.get('/', {username, password})
+  getProfile = () => {
+    return this.service.get('/')
     .then(response => response.data)
+    .catch(err => console.log(err))
   }
 
   updateProfile = (data) => {

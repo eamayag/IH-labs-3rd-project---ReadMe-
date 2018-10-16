@@ -15,10 +15,20 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next)=>{
   const id = req.user._id;
-  User.findByIdAndUpdate(id, req.body.data, {new:true})
-   .then(user => res.status(200).json(user))
-   .catch(err => next(err))
+  User.findByIdAndUpdate(id, req.body.data.user, {new:true}).then(()=>    
+    Contact.findByIdAndUpdate(id, req.body.data.contact, {new:true}).then(() =>
+    Condition.findByIdAndUpdate(id, req.body.data.condition, {new:true}).then(() =>
+    Treatment.findByIdAndUpdate(id, req.body.data.treatment, {new:true})
+    .then(user => res.status(200).json(user))
+   .catch(err => next(err)) 
+    )
+    )
+  )
+ /*  Promise.all([userpost, contactpost, conditionpost, treatmentpost])
+   .then(user => {console.log(user); return res.status(200).json(user)})
+   .catch(err => next(err)) */
  })
+
 
 router.delete('/:id', (req, res, next)=>{
 User.findByIdAndDelete(req.params.id, req.body)
@@ -29,17 +39,5 @@ User.findByIdAndDelete(req.params.id, req.body)
   res.json(err);
   })
 })
-
-// //HACE EL EDIT EN BACK: 
-// router.post('/:id', (req, res, next) => {
-// let {id}= req.params;
-// const{username, email}=req.body;
-//   User.findByIdAndUpdate(id ,{$set:{username,email}} )
-// .then((data)=>{
-//   res.status(200).json(data)
-// })
-// .catch(next)
-// })
-
 
 module.exports = router;
