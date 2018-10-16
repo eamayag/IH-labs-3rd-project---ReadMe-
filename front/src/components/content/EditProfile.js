@@ -77,7 +77,7 @@ class Edit extends Component {
             <input type='text' name='relationshipcontact' placeholder='is my...(cousin? mother? brother?)' value={this.state.relationshipcontact} onChange={ e => this.handleChange(e, 'contact')}/>
             <br></br>    
             <label>Phone of your emergency contact:</label>
-            <input type='tel' name='phone' value={this.state.contactphone} onChange={ e => this.handleChange(e, 'contact')}/>
+            <input type='text' name='contactphone' value={this.state.contactphone} onChange={ e => this.handleChange(e, 'contact')}/>
             <br></br>
           </div>
           <div>

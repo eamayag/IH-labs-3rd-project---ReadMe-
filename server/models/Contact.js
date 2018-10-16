@@ -3,7 +3,7 @@ const Schema   = mongoose.Schema;
 
 const contactSchema = new Schema({
   user: {type: Schema.Types.ObjectId, ref: 'User'},
-  contactphone: Number,
+  contactphone: String,
   contactname: String,
   relationshipcontact: String},
   {
