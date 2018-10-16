@@ -16,14 +16,14 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next)=>{
   const id = req.user._id;
-  console.log(id)
+  console.log(req.body)
   let userPromise = User.findByIdAndUpdate(id, req.body.data.user, {new:true});
   let contactPromise = Contact.findOneAndUpdate({user: id}, req.body.data.contact, {new:true});
   let conditionPromise = Condition.findOneAndUpdate({user: id}, req.body.data.condition, {new:true});
   let treatmentPromise = Treatment.findOneAndUpdate({user: id}, req.body.data.treatment, {new:true});
   
   Promise.all([userPromise, contactPromise, conditionPromise, treatmentPromise])
-   .then(data => {console.log(data); return res.status(200).json(data)})
+   .then(data => {/* console.log(data); */ return res.status(200).json(data)})
    .catch(err => next(err)) 
 })
 

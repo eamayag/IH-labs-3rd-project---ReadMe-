@@ -12,12 +12,12 @@ class Profile extends Component {
     
     this.service.getProfile()
     .then((response) => {
-      console.log(response);
+      //console.log(response);
       this.setState({
         _id: response._id,
         name: response.name,
         username: response.username, 
-         email: response.email, 
+        email: response.email, 
         dateOfBirth: response.dateOfBirth,
         address: response.address, 
         city: response.city, 
@@ -49,7 +49,7 @@ class Profile extends Component {
   }
 
    render() {
-    return this.state ? ( //info 
+    return this.state ? ( 
       <div>
         <h3>{this.state.username}'s profile info</h3>
         <p>This is the info that your NFC card will show.</p><Link to='/edit'>Anything to update? (Click here!)</Link>
