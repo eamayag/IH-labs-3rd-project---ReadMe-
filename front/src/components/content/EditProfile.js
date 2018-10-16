@@ -7,7 +7,7 @@ class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-//      redirect: false,
+     redirect: false,
       user: {},
       contact: {},
       condition: {},
@@ -25,8 +25,7 @@ class Edit extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();    
     this.profileService.updateProfile(this.state)
-    .then(user => console.log(user))
-//    this.setState({redirect: true})
+    .then(user => {console.log(user); this.setState({redirect: true})})
   }
 
   handleChange = (event, type) => {  
@@ -39,7 +38,7 @@ class Edit extends Component {
     let { name, email, dateOfBirth, address, city, contactname, 
       relationshipcontact, contactphone, bloodGroup, allergies,
       diagnosis, drug, administration, ambulance, additionalInfo } = this.state;
-    //if (this.state.redirect) return <Redirect to='/profile' />
+    if (this.state.redirect) return <Redirect to='/profile' />
     return (
       <div>
         <h1>

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const ConditionSchema = new Schema({
-  username: {type: Schema.Types.ObjectId, ref: 'User'},
+  user: {type: Schema.Types.ObjectId, ref: 'User'},
   bloodGroup: {type: String, enum: ['0+', '0-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-']},
   allergies: {type: String},
   diagnosis: {type: String},

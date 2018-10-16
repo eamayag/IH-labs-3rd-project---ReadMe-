@@ -2,12 +2,15 @@ const express = require('express');
 const router  = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
+const Contact = require('../models/Contact');
+const Condition = require('../models/Condition');
+const Treatment = require('../models/Treatment');
 const passport = require('passport');
 
 const login = (req, user) => {
   return new Promise((resolve,reject) => {
     req.login(user, err => {
-      console.log(user)
+      //console.log(user)
 
       if(err) {
         reject(new Error('Something went wrong'))
@@ -39,12 +42,15 @@ router.post('/signup', (req, res, next) => {
       password: hashPass
     }).save();
   })
-  .then( savedUser => 
-    new Contact({username: User._id}).save(), 
-    new Condition({username: User._id}).save(), 
-    new Treatment({username: User._id}).save(),
-    login(req, savedUser)) // Login the user using passport
-  .then( user => res.json({status: 200, user})) // Answer JSON
+  .then( savedUser => {
+    let contactPromise = Contact.create({user: savedUser._id}); 
+    let conditionPromise = Condition.create({user: savedUser._id}); 
+    let treatmentPromise = Treatment.create({user: savedUser._id});
+    return Promise.all([contactPromise, conditionPromise, treatmentPromise])
+    .then(() => login(req, savedUser))
+    .catch(err => next(err)) // Login the user using passport
+  })
+  .then( user => res.json({status:200, user})) // Answer JSON
   .catch(e => next(e));
 });
 

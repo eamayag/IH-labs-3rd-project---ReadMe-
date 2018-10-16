@@ -12,8 +12,10 @@ class Profile extends Component {
     
     this.service.getProfile()
     .then((response) => {
+      console.log(response);
       this.setState({
         _id: response._id,
+        name: response.name,
         username: response.username, 
          email: response.email, 
         dateOfBirth: response.dateOfBirth,
