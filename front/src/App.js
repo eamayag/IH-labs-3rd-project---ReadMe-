@@ -58,7 +58,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/profile" render={() => <Profile user={this.state.loggedInUser} />} />
               <Route exact path="/edit" render={() => <Edit user={this.state.loggedInUser} />} />
-              <Route exact path={"/publicprofile/:id"} render={() => <Public user={this.state.loggedInUser} />} />
+              <Route exact path={"/publicprofile/:id"} component={Public} />} />
             </Switch>
           </header>
         </div>
@@ -71,7 +71,7 @@ class App extends Component {
           <header className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
             <Switch>
-            <Route exact path={"/publicprofile/:id"} render={() => <Public user={this.state.loggedInUser} />} />
+            <Route exact path={"/publicprofile/:id"}  component={Public} />
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
             </Switch>

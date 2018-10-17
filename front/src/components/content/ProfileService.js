@@ -14,6 +14,12 @@ class ProfileService {
     .catch(err => console.log(err))
   }
 
+  // getPublicProfile = (id) => {
+  //   return this.service.get('/:id')
+  //   .then(response => {console.log(response); return response.data})
+  //   .catch(err => console.log(err))
+  // }
+
   updateProfile = (data) => {
     return this.service.post('/', {data})
     .then(response => response.data)

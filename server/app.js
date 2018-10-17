@@ -79,8 +79,10 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const authRouter = require('./routes/auth');
 const genericCrud = require('./routes/genericCRUD');
 const profiles = require('./routes/profile');
+const public = require('./routes/publicprofile');
 app.use('/auth', authRouter);
 app.use('/user', genericCrud(require('./models/User')));
 app.use('/profile', profiles);
+app.use('/publicprofile', public);
 
 module.exports = app;

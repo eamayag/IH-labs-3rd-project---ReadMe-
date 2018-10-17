@@ -1,28 +1,42 @@
 import React, { Component } from "react";
-import axios from 'axios'
+import PublicService from "./PublicService";
 
 class Public extends Component {
-  constructor(props) {
+  constructor(props, {match}) {
     super(props);
-    this.state = {
-      profile: props.profile
-    };
+    this.state = {match: props.match.params.id}
+    this.service = new PublicService();
   }
+ 
+  componentDidMount() {
 
-  getProfileData() {
-    let user = this.state.loggedInUser;
-    axios
-      .get(user)
-      .console.log(user)
-      .then(res => {
-        this.setState({ profile: res.data });
-        console.log(this.state.profile);
+    this.service.getPublicProfile(this.state.match)
+    .then((response) => {
+      this.setState({
+        _id: response[0]._id,
+        name: response[0].name,
+        username: response[0].username, 
+        email: response[0].email, 
+        dateOfBirth: response[0].dateOfBirth,
+        address: response[0].address, 
+        city: response[0].city, 
+        contactname: response[1].contactname,
+        relationshipcontact: response[1].relationshipcontact,
+        contactphone: response[1].contactphone,
+        bloodGroup: response[2].bloodGroup,
+        allergies: response[2].allergies,
+        diagnosis: response[2].diagnosis,
+        drug: response[3].drug,
+        administration: response[3].administration,
+        ambulance: response[3].ambulance,
+        additionalInfo: response[3].additionalInfo,
       })
-      .catch(e => console.log("error in getting info"));
+    })
+    .catch(err => console.log(err))
   }
 
   render() {
-   
+    console.log(this.state)
     if (this.state){
     return (
       <div>
