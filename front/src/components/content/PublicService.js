@@ -16,4 +16,4 @@ class PublicService {
 
 }
 
-export default PublicService;
+export default PublicService; 
