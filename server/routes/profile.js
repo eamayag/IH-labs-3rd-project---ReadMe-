@@ -19,20 +19,6 @@ router.get('/', (req, res, next) => {
     })
 })
 
-// router.get('/:id', (req, res, next) => {
-//   const id = req.params.id;
-//   console.log(id)
-//   let userPromise = User.findById(id);
-//   let contactPromise = Contact.findOne({user:id });
-//   let conditionPromise = Condition.findOne({user:id });
-//   let treatmentPromise = Treatment.findOne({user:id });
-
-//   Promise.all([userPromise, contactPromise, conditionPromise, treatmentPromise])
-//     .then(data => res.status(200).json(data))
-//     .catch(err => {res.json(err);
-//     })
-// })
-
 router.post('/', (req, res, next)=>{
   const id = req.user._id;
   let userPromise = User.findByIdAndUpdate(id, req.body.data.user, {new:true});
