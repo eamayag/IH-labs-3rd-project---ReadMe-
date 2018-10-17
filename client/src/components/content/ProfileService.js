@@ -3,7 +3,7 @@ import axios from 'axios';
 class ProfileService {
   constructor() {
     this.service = axios.create({
-      baseURL: 'http://localhost:3001/profile',
+      baseURL: `${process.env.REACT_APP_API_URL}/profile`,
       withCredentials: true
     });
   }
@@ -13,12 +13,6 @@ class ProfileService {
     .then(response => response.data)
     .catch(err => console.log(err))
   }
-
-  // getPublicProfile = (id) => {
-  //   return this.service.get('/:id')
-  //   .then(response => {console.log(response); return response.data})
-  //   .catch(err => console.log(err))
-  // }
 
   updateProfile = (data) => {
     return this.service.post('/', {data})

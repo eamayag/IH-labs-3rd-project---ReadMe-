@@ -36,19 +36,6 @@ class Profile extends Component {
     .catch(err => console.log(err))
   }
 
-  // handleChange = (event) => {
-  //   const {name, value} = event.target;
-  //   this.setState({ [name]: value});
-  // }
-
-  // updateProfile = () => {
-  //   this.service.updateProfile(this.state.name, this.state.email, this.state.dateOfBirth,
-  //     this.state.address, this.state.city, this.state.contactname, this.state.relationshipcontact,
-  //     this.state.contactname, this.state.relationshipcontact, this.state.contactphone, 
-  //     this.state.bloodGroup, this.state.allergies, this.state.diagnosis, this.state.drug,
-  //     this.state.administration, this.state.ambulance, this.state.additionalInfo) 
-  // }
-
    render() {
     return this.state ? ( 
       <div>
