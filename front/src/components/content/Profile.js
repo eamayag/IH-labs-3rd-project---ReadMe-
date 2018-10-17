@@ -5,32 +5,32 @@ import ProfileService from "./ProfileService";
 class Profile extends Component {
   constructor(props) {
     super(props);
+    this.state = {}
     this.service = new ProfileService();
   }
-
+ 
   componentDidMount() {
-    
+
     this.service.getProfile()
     .then((response) => {
-      //console.log(response);
       this.setState({
-        _id: response._id,
-        name: response.name,
-        username: response.username, 
-        email: response.email, 
-        dateOfBirth: response.dateOfBirth,
-        address: response.address, 
-        city: response.city, 
-        contactname: response.contactname,
-        relationshipcontact: response.relationshipcontact,
-        contactphone: response.contactphone,
-        bloodGroup: response.bloodGroup,
-        allergies: response.allergies,
-        diagnosis: response.diagnosis,
-        drug: response.drug,
-        administration: response.administration,
-        ambulance: response.ambulance,
-        additionalInfo: response.additionalInfo,
+        _id: response[0]._id,
+        name: response[0].name,
+        username: response[0].username, 
+        email: response[0].email, 
+        dateOfBirth: response[0].dateOfBirth,
+        address: response[0].address, 
+        city: response[0].city, 
+        contactname: response[1].contactname,
+        relationshipcontact: response[1].relationshipcontact,
+        contactphone: response[1].contactphone,
+        bloodGroup: response[2].bloodGroup,
+        allergies: response[2].allergies,
+        diagnosis: response[2].diagnosis,
+        drug: response[3].drug,
+        administration: response[3].administration,
+        ambulance: response[3].ambulance,
+        additionalInfo: response[3].additionalInfo,
       })
     })
     .catch(err => console.log(err))
@@ -42,10 +42,11 @@ class Profile extends Component {
   }
 
   updateProfile = () => {
-    this.service.updateProfile(this.state.name, this.state.email, this.state.dateOfBirth, this.state.address,
-      this.state.city, this.state.contactname, this.state.relationshipcontact, this.state.contactname,
-      this.state.relationshipcontact, this.state.contactphone, this.state.bloodGroup, this.state.allergies,
-      this.state.diagnosis, this.state.drug, this.state.administration, this.state.ambulance, this.state.additionalInfo) 
+    this.service.updateProfile(this.state.name, this.state.email, this.state.dateOfBirth,
+      this.state.address, this.state.city, this.state.contactname, this.state.relationshipcontact,
+      this.state.contactname, this.state.relationshipcontact, this.state.contactphone, 
+      this.state.bloodGroup, this.state.allergies, this.state.diagnosis, this.state.drug,
+      this.state.administration, this.state.ambulance, this.state.additionalInfo) 
   }
 
    render() {
@@ -59,7 +60,7 @@ class Profile extends Component {
         <ol>
           <li>Full name: {this.state.name}</li>
           <li>email: {this.state.email}</li>
-          <li>Date of birth: {this.state.dateOfBirth}</li>
+          <li>Year of birth: {this.state.dateOfBirth}</li>
           <li>Address: {this.state.address}</li>
           <li>City: {this.state.city}</li>
         </ol>

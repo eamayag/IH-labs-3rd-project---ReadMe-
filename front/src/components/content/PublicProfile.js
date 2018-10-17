@@ -23,7 +23,7 @@ class Public extends Component {
 
   render() {
    
-    if (this.state.e){
+    if (this.state){
     return (
       <div>
         <h1>
@@ -72,6 +72,8 @@ class Public extends Component {
 
       </div>
     );
+    } else {
+      return <h3>Loading...</h3>
     }
   }
 }

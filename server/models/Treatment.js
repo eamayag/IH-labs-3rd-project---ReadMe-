@@ -6,7 +6,7 @@ const treatmentSchema = new Schema({
   drug: String,
   administration: String,
   additionalInfo: String,  
-  ambulance: Boolean,
+  ambulance: String,
 }, {
   timestamps: {
     createdAt: 'created_at',

@@ -58,8 +58,8 @@ class Edit extends Component {
             <label>email:</label>
             <input type='email' name='email' placeholder='Your email' value={this.state.email} onChange={ e => this.handleChange(e, 'user')}/>
             <br></br>
-            <label>Date of birth:</label>
-            <input type='date' name='dateOfBirth' value={this.state.dateOfBirth} onChange={ e => this.handleChange(e, 'user')}/>
+            <label>Year of birth:</label>
+            <input type='number' name='dateOfBirth' value={this.state.dateOfBirth} onChange={ e => this.handleChange(e, 'user')}/>
             <br></br>
             <label>Address:</label>
             <input type='text' name='address' value={this.state.address} onChange={ e => this.handleChange(e, 'user')}/>
