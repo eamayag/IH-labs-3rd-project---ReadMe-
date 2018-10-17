@@ -36,48 +36,75 @@ class Public extends Component {
   }
 
   render() {
-    console.log(this.state)
+    //Personal info - pack
+    let userSection;
+    if ((this.state.email) || (this.state.dateOfBirth) || (this.state.address) || (this.state.city)) {
+      userSection = <h4>Personal info:</h4>}
+    let showEmail;
+    if (this.state.email) {showEmail = <p>email: {this.state.email}</p>}
+    let showYearBirth;
+    if (this.state.dateOfBirth) {showYearBirth = <p>Year of birth: {this.state.dateOfBirth}</p>}
+    let showAddress;
+    if (this.state.address) {showAddress = <p>Address: {this.state.address}</p>}
+    let showCity;
+    if (this.state.city) {showCity = <p>City: {this.state.city}</p>}
+    //Emergency contact - pack
+    let contactSection;
+    if ((this.state.contactname) || (this.state.relationshipcontact) || (this.state.contactphone) ){
+      contactSection = <h4>EMERGENCY CONTACT:</h4>}
+    let showContactName;
+    if (this.state.contactname) {showContactName = <p>Name: {this.state.contactname}</p>}
+    let showRelationshipContact;
+    if (this.state.relationshipcontact) {showRelationshipContact = <p>is his/her...: {this.state.relationshipcontact}</p>}
+    let showContactPhone;
+    if (this.state.contactphone) {showContactPhone = <p>Phone: {this.state.contactphone}</p>}
+    //Emergency info - pack
+    let emergencySection;
+    if ((this.state.bloodGroup) || (this.state.diagnosis) || (this.state.drug) || (this.state.administration) || (this.state.ambulance) || (this.state.additionalInfo)) {
+      emergencySection = <h4>EMERGENCY INFO:</h4>}
+    let showBloodGroup;
+    if (this.state.bloodGroup) {showBloodGroup = <p>Blood group: {this.state.bloodGroup}</p>}
+    let showAllergies;
+    if (this.state.allergies) {showAllergies =  <p>Allergies: {this.state.allergies}</p>}
+    let showDisease;
+    if (this.state.diagnosis) {showDisease =  <p>Disease: {this.state.diagnosis}</p>}
+    let showDrugs;
+    if (this.state.drug) {showDrugs =  <p>{this.state.username} needs this medication: {this.state.drug}</p>}
+    let showAdministration;
+    if (this.state.administration) {showAdministration =  <p>It must be administered in this way: {this.state.administration}</p>}
+    let showAmbulance;
+    if (this.state.ambulance) {showAmbulance =  <p>{this.state.username} needs you to call an ambulance: {this.state.ambulance}</p>}
+    let showAdditionalInfo;
+    if (this.state.additionalInfo) {showAdditionalInfo =  <p>Additional info: {this.state.additionalInfo}</p>}
+
     if (this.state){
     return (
+    <div>
+        <h1>This is the public <em>ReadMe!</em> profile of {this.state.name}</h1>
+      <div>{userSection}</div>
       <div>
-        <h1>
-          This is the public <em>ReadMe!</em> profile of {this.state.name}
-        </h1>
-        <h4>
-          Personal info:
-        </h4>
-        <ol>
-          <li>email: {this.state.email}</li>
-          <li>Year of birth: {this.state.dateOfBirth}</li>
-          <li>Address: {this.state.address}</li>
-          <li>City: {this.state.city}</li>
-        </ol>
-
-        <h4>
-          The EMERGENCY CONTACT of {this.state.username} is:
-        </h4>
-        <ol>
-          <li>Name: {this.state.contactname}</li>
-          <li>is his/her... {this.state.relationshipcontact}</li>
-          <li>Phone: {this.state.contactphone} </li>
-        </ol>
-
-        <h4>
-          EMERGENCY INFO:
-        </h4>
-        <ol>
-          <li>Blood group: {this.state.bloodGroup}</li>
-          <li>Allergies: {this.state.allergies}</li>
-          <li>Disease: {this.state.diagnosis} </li>
-          <li>{this.state.username} needs this medication: {this.state.drug}</li>
-          <li>It must be administered in this way: {this.state.administration}</li>
-          <li>{this.state.username} needs you to call an ambulance: {this.state.ambulance} </li>
-          <li>Additional info: {this.state.additionalInfo} </li>
-        </ol>
-
-        
-
+        {showEmail}
+        {showYearBirth}
+        {showAddress}
+        {showCity}
       </div>
+      <div>{contactSection}</div>
+      <div>
+        {showContactName}
+        {showRelationshipContact}
+        {showContactPhone}
+      </div>  
+      <div>{emergencySection}</div>
+      <div>
+        {showBloodGroup}
+        {showAllergies}
+        {showDisease}
+        {showDrugs}
+        {showAdministration}
+        {showAmbulance}
+        {showAdditionalInfo}
+      </div>
+    </div>
     );
     } else {
       return <h3>Loading...</h3>
