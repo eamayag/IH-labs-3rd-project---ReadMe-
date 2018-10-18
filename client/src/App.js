@@ -7,7 +7,8 @@ import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
 import Profile from './components/content/Profile';
 import Public from './components/content/PublicProfile';
-import Edit from './components/content/EditProfile'
+import Edit from './components/content/EditProfile';
+require('dotenv').config()
 
 class App extends Component {
   constructor(props){

@@ -84,9 +84,9 @@ app.use('/user', genericCrud(require('./models/User')));
 app.use('/profile', profiles);
 app.use('/publicprofile', public);
 
-// app.use((req, res, next) => {
-//   // If no routes match, send them the React HTML.
-//    res.sendFile(__dirname + "/public/index.html");
-//   });
+app.use((req, res, next) => {
+  // If no routes match, send them the React HTML.
+   res.sendFile(__dirname + "/public/index.html");
+  });
 
 module.exports = app;

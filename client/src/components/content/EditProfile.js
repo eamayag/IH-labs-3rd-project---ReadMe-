@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 import ProfileService from "./ProfileService";
+require('dotenv').config()
 
 class Edit extends Component {
   constructor(props) {
