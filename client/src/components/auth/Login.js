@@ -42,22 +42,23 @@ class Login extends Component {
   render() {
     if(this.state.redirect) return <Redirect to='/profile' />
 
-    return (<div>
+    return (
+    <div className='loginDiv'>
       <h3>Log in:</h3>
 
-      <form onSubmit={this.handleFormSubmit}>
-        <fieldset>
+      <form className='logininput' onSubmit={this.handleFormSubmit}>
+        <fieldset className='logininput'>
           <label>Username:</label>
-          <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+          <input className='logininput' type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
         </fieldset>
 
-        <fieldset>
+        <fieldset className='logininput'>
           <label>Password:</label>
-          <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+          <input className='logininput' type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
 
 
-        <input type="submit" value="Log in"/>
+        <input className='logininput' type="submit" value="Log in"/>
       </form>
 
       <p>{this.state.error ? 'Invalid username or password' : ''}</p>

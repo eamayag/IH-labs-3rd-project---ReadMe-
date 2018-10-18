@@ -37,7 +37,7 @@ class Signup extends Component {
     if(this.state.redirect) return <Redirect to='/edit' />
 
     return(
-      <div>
+      <div className='loginDiv'>
         <h3>Create your account:</h3>
 
         <form onSubmit={this.handleFormSubmit}>

@@ -51,8 +51,8 @@ class App extends Component {
   render() {
     this.fetchUser()   
     const thisuser = this.state.loggedInUser;
-    const title = <h1>Welcome to ReadMe!</h1>;
-    const info = <h2>...what if a tag could save your life?</h2>;
+    const title = <h1 className='title'>Welcome to ReadMe!</h1>;
+    const info = <h2 className='info'>...what if a tag could save your life?</h2>;
   
     if(this.state.loggedInUser){
       return (
