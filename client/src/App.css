@@ -60,21 +60,28 @@ input {
 
 /* profile info */
 .instructions{
-  border: 1px solid white;
-  border-radius: 3em;
-  width: 35%;
-  margin: 0 auto;
-  padding: 1em 0;
+  font-size: 1.2em;
+  font-weight: bolder;
+  text-decoration-line: underline;
+  padding-top: 1em;
 }
 
 .profileinfo {
   padding-top: 1em;
 }
 
+/* public info */
+.publictitle {
+  margin-top: auto;
+  padding-top: 1em;
+}
+
+
 /* edit menu*/
 .hiuser {
  line-height: 20vh
 }
+
 
 
 

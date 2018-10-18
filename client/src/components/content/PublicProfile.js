@@ -40,7 +40,7 @@ class Public extends Component {
   render() {
     //user logged
     let backButton='';
-    if (this.state.loggedInUser) {backButton = <li><Link to='/profile'>Back</Link></li>}
+    if (this.state.loggedInUser) {backButton = <p className='instructions'><Link to='/profile'>Back</Link></p>}
     //Personal info - pack
     let userSection;
     if ((this.state.email) || (this.state.dateOfBirth) || (this.state.address) || (this.state.city)) {
@@ -85,21 +85,21 @@ class Public extends Component {
     if (this.state){
     return (
     <div>
-        <h1>This is the public <em>ReadMe!</em> profile of {this.state.name}</h1>
-      <div>{userSection}</div>
+        <h1 className='publictitle'>This is the public <em>ReadMe!</em> profile of {this.state.name}</h1>
+      <div className='publictitle'>{userSection}</div>
       <div>
         {showEmail}
         {showYearBirth}
         {showAddress}
         {showCity}
       </div>
-      <div>{contactSection}</div>
+      <div className='publictitle'>{contactSection}</div>
       <div>
         {showContactName}
         {showRelationshipContact}
         {showContactPhone}
       </div>  
-      <div>{emergencySection}</div>
+      <div className='publictitle'>{emergencySection}</div>
       <div>
         {showBloodGroup}
         {showAllergies}
@@ -109,7 +109,7 @@ class Public extends Component {
         {showAmbulance}
         {showAdditionalInfo}
       </div>
-      <div>
+      <div className='publictitle'>
         {backButton}
       </div>
     </div>
