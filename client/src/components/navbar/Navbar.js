@@ -35,10 +35,10 @@ class Navbar extends Component {
     } else {
       return (
         <div className='navbardiv'>
-          <div className='inlineblock'>
+          <div>
           <a className='forNavBar' href="https://github.com/eamayag"><em>sprnz</em></a>
           </div>
-          <div className='inlineblock'>
+          <div>
             <nav className="nav-style">
             <ul>  
             <li><Link to='/signup'>Sign up</Link></li>

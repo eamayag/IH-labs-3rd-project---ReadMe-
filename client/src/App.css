@@ -1,23 +1,15 @@
+/* HOME */
 .navbardiv {
   width: 100%;
   display: flex;
   justify-content: space-between;
   position: fixed;
   padding: 0 3vh;
-
 }
 
 .forNavBar {
   margin: 0 5em 0 0;
-  padding-left: 0
-}
-
-.inlineblock{
- display: inline-block;
-}
-
-.App {
-  text-align: center;
+  display: inline-block
 }
 
 .body {
@@ -26,16 +18,12 @@
   height: 95vh;
   background-size: cover;
   background-position: center;
-  color: gainsboro
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  color: gainsboro;
+  text-align: center;
 }
 
 .App-header { /*navbar*/
-  background-color: #282c34;
+  background-color: black;
   min-height: 5vh;
   display: flex;
   font-size: calc(8px + 2vmin);
@@ -43,16 +31,11 @@
   margin-bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 h1 { /*title*/
   margin-top: 0;
   line-height: 5vh;
   text-align: right;
   padding-right: 5vh;
-
 }
 
 h2 { /*intro*/
@@ -65,8 +48,9 @@ h2 { /*intro*/
 
 h3 {
   margin: 10vh 0 3vh 0;
-
+  text-align: center;
 }
+
 input {
   background: ghostwhite;
   color: black;
@@ -74,6 +58,18 @@ input {
   border-radius: 1em;
   padding: 0 1em;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 label {
   padding: 0 1em 1em 0;
