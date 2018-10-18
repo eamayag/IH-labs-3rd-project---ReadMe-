@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 import ProfileService from "./ProfileService";
 
@@ -108,6 +108,7 @@ class Edit extends Component {
             <br></br>
           </div>
           <input type='submit' value='Submit'/>
+          <li><Link to='/profile'>Back</Link></li>
         </form>
       </div>
     );

@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import PublicService from "./PublicService";
+import { Link } from 'react-router-dom';
 
 class Public extends Component {
-  constructor(props, {match}) {
+  constructor(props, {id}) {
     super(props);
-    this.state = {match: props.match.params.id}
     this.service = new PublicService();
+    props.user ?  this.state = {match: props.id.match.params.id, loggedInUser: props.user} :  this.state = {match: props.id.match.params.id}
+   
   }
- 
+  
   componentDidMount() {
 
     this.service.getPublicProfile(this.state.match)
@@ -36,6 +38,9 @@ class Public extends Component {
   }
 
   render() {
+    //user logged
+    let backButton;
+    if (this.state.loggedInUser) {backButton = <li><Link to='/profile'>Back</Link></li>}
     //Personal info - pack
     let userSection;
     if ((this.state.email) || (this.state.dateOfBirth) || (this.state.address) || (this.state.city)) {
@@ -103,6 +108,9 @@ class Public extends Component {
         {showAdministration}
         {showAmbulance}
         {showAdditionalInfo}
+      </div>
+      <div>
+        {backButton}
       </div>
     </div>
     );

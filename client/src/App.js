@@ -49,18 +49,20 @@ class App extends Component {
   
   render() {
     this.fetchUser()   
-    const thisuser = this.state.loggedInUser; 
+    const thisuser = this.state.loggedInUser;
+    const title = <h1>Welcome to ReadMe!</h1>;
+    const info = <h4>What if a tag could save your life?</h4>;
     if(this.state.loggedInUser){
       return (
         <div className="App">
           <header className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
           </header>
-          <div>  
+          <div className='body'>  
             <Switch>
               <Route exact path="/profile" render={() => <Profile user={this.state.loggedInUser} />} />
               <Route exact path="/edit" render={() => <Edit user={this.state.loggedInUser} />} />
-              <Route exact path={"/publicprofile/:id"} component={Public} />
+              <Route exact path={"/publicprofile/:id"} render={(id) => <Public id={id} user={this.state.loggedInUser}/>} />
             </Switch>
           </div>
         </div>
@@ -73,9 +75,11 @@ class App extends Component {
           <header className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
           </header>
-          <div>
+          <div className='body'>
+          <div>{title}</div>
+          <div>{info}</div>
             <Switch>
-            <Route exact path={"/publicprofile/:id"}  component={Public} />
+              <Route exact path={"/publicprofile/:id"}  render={(id) => <Public id={id} />} />
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
             </Switch>
