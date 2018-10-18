@@ -58,6 +58,19 @@ input {
   padding: 0 1em;
 }
 
+/* profile info */
+.instructions{
+  border: 1px solid white;
+  border-radius: 3em;
+  width: 35%;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.profileinfo {
+  padding-top: 1em;
+}
+
 /* edit menu*/
 .hiuser {
  line-height: 20vh
