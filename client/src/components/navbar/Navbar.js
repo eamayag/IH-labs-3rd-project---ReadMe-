@@ -22,23 +22,30 @@ class Navbar extends Component {
 
     if (this.state.loggedInUser) {
       return (
+      <div className='navbardiv'>
         <nav className="nav-style">
           <ul>
-            <li><a onClick={this.handleLogout}>Logout</a></li>
+            <li><a onClick={this.handleLogout}>Log out</a></li>
           </ul>
 
-          <h2>Welcome, {this.state.loggedInUser.username}</h2>
+          <h2>Hi, {this.state.loggedInUser.username}!</h2>
         </nav>
+      </div>
       )
     } else {
       return (
-        <div>
-          <nav className="nav-style">
-            <ul>
-            <li><Link to='/signup'>Signup</Link></li>
-            <li><Link to='/login'>Login</Link></li>
+        <div className='navbardiv'>
+          <div className='inlineblock'>
+          <a className='forNavBar' href="https://github.com/eamayag"><em>sprnz</em></a>
+          </div>
+          <div className='inlineblock'>
+            <nav className="nav-style">
+            <ul>  
+            <li><Link to='/signup'>Sign up</Link></li>
+            <li><Link to='/login'>Log in</Link></li>
             </ul>
-          </nav>
+            </nav>
+          </div>
         </div>
       )
     }

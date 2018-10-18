@@ -52,7 +52,7 @@ class App extends Component {
     this.fetchUser()   
     const thisuser = this.state.loggedInUser;
     const title = <h1>Welcome to ReadMe!</h1>;
-    const info = <h4>What if a tag could save your life?</h4>;
+    const info = <h2>...what if a tag could save your life?</h2>;
     if(this.state.loggedInUser){
       return (
         <div className="App">
@@ -77,8 +77,11 @@ class App extends Component {
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
           </header>
           <div className='body'>
-          <div>{title}</div>
+         
           <div>{info}</div>
+          <br></br>
+          <div>{title}</div>
+         
             <Switch>
               <Route exact path={"/publicprofile/:id"} render={(id) => <Public id={id} />} />
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>

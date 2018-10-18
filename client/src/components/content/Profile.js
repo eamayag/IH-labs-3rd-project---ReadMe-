@@ -43,42 +43,31 @@ class Profile extends Component {
         <p>This is the info that your NFC card will show.</p><Link to='/edit'>Anything to update? (Click here!)</Link>
         <h4>
           Your personal info:
-        </h4>
-        <ol>
-          <li>Full name: {this.state.name}</li>
-          <li>email: {this.state.email}</li>
-          <li>Year of birth: {this.state.dateOfBirth}</li>
-          <li>Address: {this.state.address}</li>
-          <li>City: {this.state.city}</li>
-        </ol>
-
+        </h4>       
+          <p>Full name: {this.state.name}</p>
+          <p>email: {this.state.email}</p>
+          <p>Year of birth: {this.state.dateOfBirth}</p>
+          <p>Address: {this.state.address}</p>
+          <p>City: {this.state.city}</p>
         <h4>
           Your emergency contact:
         </h4>
-        <ol>
-          <li>Name: {this.state.contactname}</li>
-          <li>is your... {this.state.relationshipcontact}</li>
-          <li>Phone: {this.state.contactphone} </li>
-        </ol>
-
+          <p>Name: {this.state.contactname}</p>
+          <p>is your... {this.state.relationshipcontact}</p>
+          <p>Phone: {this.state.contactphone} </p>
         <h4>
           Your medical info:
         </h4>
-        <ol>
-          <li>Blood group: {this.state.bloodGroup}</li>
-          <li>Allergies: {this.state.allergies}</li>
-          <li>Disease: {this.state.diagnosis} </li>
-        </ol>
-
+          <p>Blood group: {this.state.bloodGroup}</p>
+          <p>Allergies: {this.state.allergies}</p>
+          <p>Disease: {this.state.diagnosis} </p>
         <h4>
           Your treatment info:
         </h4>
-        <ol>
-          <li>I need this medication: {this.state.drug}</li>
-          <li>It must be administered in this way: {this.state.administration}</li>
-          <li>I need an ambulance: {this.state.ambulance} </li>
-          <li>Additional info: {this.state.additionalInfo} </li>
-        </ol>
+          <p>I need this medication: {this.state.drug}</p>
+          <p>It must be administered in this way: {this.state.administration}</p>
+          <p>I need an ambulance: {this.state.ambulance} </p>
+          <p>Additional info: {this.state.additionalInfo} </p>
 
         <Link to={"/publicprofile/" + this.state._id}>See how others will see your profile</Link>
         <br></br>

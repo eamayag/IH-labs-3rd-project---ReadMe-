@@ -86,7 +86,6 @@ app.use('/api/publicprofile', public);
 
 app.use((req, res, next) => {
   // If no routes match, send them the React HTML.
-  console.log("Entra")
    res.sendFile(__dirname + "/public/index.html");
   });
   

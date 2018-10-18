@@ -43,7 +43,7 @@ class Login extends Component {
     if(this.state.redirect) return <Redirect to='/profile' />
 
     return (<div>
-      <h3>Please, login to our site</h3>
+      <h3>Log in</h3>
 
       <form onSubmit={this.handleFormSubmit}>
         <fieldset>
@@ -60,7 +60,7 @@ class Login extends Component {
         <input type="submit" value="Login"/>
       </form>
 
-      <h1>{this.state.error ? 'Error' : ''}</h1>
+      <p>{this.state.error ? 'Invalid username or password' : ''}</p>
     </div>)
   }
 }
