@@ -69,11 +69,11 @@ app.use(session({
 require('./passport')(app);
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+//app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'ReadMe';
 
 const authRouter = require('./routes/auth');
 const genericCrud = require('./routes/genericCRUD');
@@ -82,11 +82,12 @@ const public = require('./routes/publicprofile');
 app.use('/auth', authRouter);
 app.use('/user', genericCrud(require('./models/User')));
 app.use('/profile', profiles);
-app.use('/publicprofile', public);
+app.use('/api/publicprofile', public);
 
 app.use((req, res, next) => {
   // If no routes match, send them the React HTML.
+  console.log("Entra")
    res.sendFile(__dirname + "/public/index.html");
   });
-
+  
 module.exports = app;

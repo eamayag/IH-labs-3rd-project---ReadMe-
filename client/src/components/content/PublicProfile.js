@@ -6,7 +6,7 @@ class Public extends Component {
   constructor(props, {id}) {
     super(props);
     this.service = new PublicService();
-    props.user ?  this.state = {match: props.id.match.params.id, loggedInUser: props.user} :  this.state = {match: props.id.match.params.id}
+    props.user ?  this.state = {match: props.id.match.params.id, loggedInUser: props.user} : this.state = {match: props.id.match.params.id}
    
   }
   
@@ -39,7 +39,7 @@ class Public extends Component {
 
   render() {
     //user logged
-    let backButton;
+    let backButton='';
     if (this.state.loggedInUser) {backButton = <li><Link to='/profile'>Back</Link></li>}
     //Personal info - pack
     let userSection;

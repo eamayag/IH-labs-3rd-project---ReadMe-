@@ -80,7 +80,7 @@ class App extends Component {
           <div>{title}</div>
           <div>{info}</div>
             <Switch>
-              <Route exact path={"/publicprofile/:id"}  render={(id) => <Public id={id} />} />
+              <Route exact path={"/publicprofile/:id"} render={(id) => <Public id={id} />} />
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
             </Switch>
