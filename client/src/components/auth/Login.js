@@ -57,7 +57,7 @@ class Login extends Component {
         </fieldset>
 
 
-        <input type="submit" value="Login"/>
+        <input type="submit" value="Log in"/>
       </form>
 
       <p>{this.state.error ? 'Invalid username or password' : ''}</p>

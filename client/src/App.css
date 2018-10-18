@@ -2,7 +2,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-left: 2vh
+  position: fixed;
+  padding: 0 3vh;
 
 }
 
@@ -20,12 +21,9 @@
 }
 
 .body {
-  
   background-image: url('/black-background-blank-card-1111321.jpg');
-  background-repeat: no-repeat, repeat;
-  background-color: #cccccc;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   background-size: cover;
   background-position: center;
   color: gainsboro
@@ -43,7 +41,6 @@
   font-size: calc(8px + 2vmin);
   color: gainsboro;
   margin-bottom: 0;
-  padding-right: 1vh;
 }
 
 .App-link {

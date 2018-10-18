@@ -46,12 +46,12 @@ class Edit extends Component {
     if (this.state.redirect) return <Redirect to='/profile' />
     return (
       <div>
-        <h1>
+        <h4>
           Edit your <em>ReadMe!</em> profile:
-        </h1>
-        <p>Remember this is the info we will show on your NFC card. Just fill what you want to show, leave blank the rest.</p>
+        </h4>
+        <p>This is the info we will show on your NFC card. Just fill what you want to show, leave blank the rest.</p>
         <form onSubmit={this.handleFormSubmit}>
-          <div>
+          <div className='editform'>
             <h4>Your personal info:</h4>
             <label>Name:</label>
             <input type='text' name='name' placeholder='Your full name' value={this.state.name} onChange={ e => this.handleChange(e, 'user')}/>
@@ -69,7 +69,7 @@ class Edit extends Component {
             <input type='text' name='city' value={this.state.city} onChange={ e => this.handleChange(e, 'user')}/>
             <br></br>
           </div>
-          <div>
+          <div className='editform'>
             <h4>Your emergency contact:</h4>
             <label>Name of your emergency contact:</label>
             <input type='text' name='contactname' placeholder='Name of your emergency contact' value={this.state.contactname} onChange={ e => this.handleChange(e, 'contact')}/>
@@ -81,7 +81,7 @@ class Edit extends Component {
             <input type='text' name='contactphone' value={this.state.contactphone} onChange={ e => this.handleChange(e, 'contact')}/>
             <br></br>
           </div>
-          <div>
+          <div className='editform'>
             <h4>Your medical emergency info:</h4>
             <label>Blood group:</label>
             <input type='text' name='bloodGroup' placeholder='0+, 0-, A+, A-, B+, B-, AB+, AB-' value={this.state.bloodGroup} onChange={ e => this.handleChange(e, 'condition')}/>
@@ -93,7 +93,7 @@ class Edit extends Component {
             <input type='text' name='diagnosis' placeholder='I have...' value={this.state.diagnosis} onChange={ e => this.handleChange(e, 'condition')}/>
             <br></br>
           </div>
-          <div>
+          <div className='editform'>
             <h4>Your treatment in an emergency situation:</h4>
             <label>Medication you need to be administered inmediately:</label>
             <input type='text' name='drug' placeholder='name of medication' value={this.state.drug} onChange={ e => this.handleChange(e, 'treatment')}/>

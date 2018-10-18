@@ -53,6 +53,7 @@ class App extends Component {
     const thisuser = this.state.loggedInUser;
     const title = <h1>Welcome to ReadMe!</h1>;
     const info = <h2>...what if a tag could save your life?</h2>;
+  
     if(this.state.loggedInUser){
       return (
         <div className="App">

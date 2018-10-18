@@ -39,8 +39,7 @@ class Profile extends Component {
    render() {
     return this.state ? ( 
       <div>
-        <h3>{this.state.username}'s profile info</h3>
-        <p>This is the info that your NFC card will show.</p><Link to='/edit'>Anything to update? (Click here!)</Link>
+        <p className='instructions'>This is the info that your NFC card will show.</p><Link to='/edit'>Anything to update? (Click here!)</Link>
         <h4>
           Your personal info:
         </h4>       
