@@ -86,6 +86,7 @@ class Public extends Component {
     return (
     <div>
         <h1 className='publictitle'>This is the public <em>ReadMe!</em> profile of {this.state.name}</h1>
+        <h2 className='publictitle'>If you're reading this, {this.state.name} probably needs your help!</h2>
       <div className='publictitle'>{userSection}</div>
       <div>
         {showEmail}

@@ -42,12 +42,12 @@ class Signup extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
-            <label>Username:</label>
+            <label className='labellogin'>Username:</label>
             <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
           </fieldset>
           
           <fieldset>
-            <label>Password:</label>
+            <label className='labellogin'>Password:</label>
             <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           </fieldset>
           

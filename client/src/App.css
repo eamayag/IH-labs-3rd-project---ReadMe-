@@ -14,10 +14,9 @@
 
 .body {
   background-image: url('/black-background-blank-card-1111321.jpg');
-  width: 100%;
-  height: 95vh;
-  background-size: cover;
-  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
   color: gainsboro;
   text-align: center;
 }
@@ -59,7 +58,7 @@ input {
 }
 
 /* profile info */
-.instructions{
+.instructions {
   font-size: 1.2em;
   font-weight: bolder;
   text-decoration-line: underline;
@@ -76,26 +75,26 @@ input {
   padding-top: 1em;
 }
 
-
 /* edit menu*/
-.hiuser {
- line-height: 20vh
+.edittitle {
+  margin-top: auto;
+  padding-top: 1em;
 }
 
-
-
-
-
-
-
-
-
-
-
-label {
-  padding: 0 1em 1em 0;
+.editform {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0 3em;
 }
 
+/* extras */
+.labellogin {
+  padding: 0.5em;
+}
+
+p {
+  font-size: 1.2em;
+}
 
 a {
   color: white;

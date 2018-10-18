@@ -48,12 +48,12 @@ class Login extends Component {
 
       <form className='logininput' onSubmit={this.handleFormSubmit}>
         <fieldset className='logininput'>
-          <label>Username:</label>
+          <label className='labellogin'>Username:</label>
           <input className='logininput' type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
         </fieldset>
 
         <fieldset className='logininput'>
-          <label>Password:</label>
+          <label className='labellogin'>Password:</label>
           <input className='logininput' type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
 
