@@ -40,8 +40,8 @@ class Profile extends Component {
     return this.state ? ( 
       <div>
         <div className='instructions'>
-        <p>This is the info that your NFC card will show.</p>
-        <p><Link to='/edit'>Anything to update? (Click here!)</Link></p>
+        <p>This is your NFC tag information.</p>
+        <p><Link to='/edit'>Any update? (Click here!)</Link></p>
         </div>
         <h4 className='profileinfo'>Your personal info:</h4>       
           <p>Full name: {this.state.name}</p>

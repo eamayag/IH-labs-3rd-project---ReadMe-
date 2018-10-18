@@ -14,9 +14,10 @@
 
 .body {
   background-image: url('/black-background-blank-card-1111321.jpg');
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center;
+  width: 100%;
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
   color: gainsboro;
   text-align: center;
 }
@@ -62,7 +63,8 @@ input {
   font-size: 1.2em;
   font-weight: bolder;
   text-decoration-line: underline;
-  padding-top: 1em;
+  padding-top: 0.5em;
+  line-height: 0.8em;
 }
 
 .profileinfo {
@@ -73,12 +75,13 @@ input {
 .publictitle {
   margin-top: auto;
   padding-top: 1em;
+
 }
 
 /* edit menu*/
 .edittitle {
   margin-top: auto;
-  padding-top: 1em;
+  padding: 0.3em 0;
 }
 
 .editform {
@@ -93,7 +96,7 @@ input {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 a {

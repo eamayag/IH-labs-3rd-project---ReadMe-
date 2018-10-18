@@ -46,10 +46,10 @@ class Edit extends Component {
     if (this.state.redirect) return <Redirect to='/profile' />
     return (
       <div className='edittitle'>
-        <h4>
+        <h3>
           Edit your <em>ReadMe!</em> profile:
-        </h4>
-        <p>This is the info we will show on your NFC card. Just fill what you want to show, leave blank the rest.</p>
+        </h3>
+        <h4>This is your NFC tag information. Just fill what you want to show!</h4>
         <form onSubmit={this.handleFormSubmit}>
           <div className='editform'>
             <h4>Your personal info:</h4>
