@@ -14,8 +14,7 @@
 
 .body {
   background-image: url('/black-background-blank-card-1111321.jpg');
-  width: 100%;
-  height: 95vh;
+  min-height: 95vh;
   background-size: cover;
   background-position: center;
   color: gainsboro;
