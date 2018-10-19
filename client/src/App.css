@@ -74,13 +74,11 @@ input {
 /* public info */
 .publictitle {
   margin-top: auto;
-  padding-top: 0.5em;
 }
 
 .emergency{
   text-decoration-line: underline;
   text-decoration-color: red;
-  text-emphasis-style: 
 }
 
 /* edit menu*/
