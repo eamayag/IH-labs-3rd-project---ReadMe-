@@ -79,9 +79,9 @@ const authRouter = require('./routes/auth');
 const genericCrud = require('./routes/genericCRUD');
 const profiles = require('./routes/profile');
 const public = require('./routes/publicprofile');
-app.use('/auth', authRouter);
-app.use('/user', genericCrud(require('./models/User')));
-app.use('/profile', profiles);
+app.use('/api/auth', authRouter);
+app.use('/api/user', genericCrud(require('./models/User')));
+app.use('/api/profile', profiles);
 app.use('/api/publicprofile', public);
 
 app.use((req, res, next) => {

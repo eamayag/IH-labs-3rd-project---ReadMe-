@@ -107,7 +107,9 @@ a {
   cursor: pointer;
 }
 
-
+.joinp {
+  display:inline-block
+}
 
 @keyframes App-logo-spin {
   from {

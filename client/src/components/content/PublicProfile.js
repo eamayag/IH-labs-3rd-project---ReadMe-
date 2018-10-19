@@ -46,21 +46,21 @@ class Public extends Component {
     if ((this.state.email) || (this.state.dateOfBirth) || (this.state.address) || (this.state.city)) {
       userSection = <h4>Personal info:</h4>}
     let showEmail;
-    if (this.state.email) {showEmail = <p>email: {this.state.email}</p>}
+    if (this.state.email) {showEmail = <p className='joinp'>email: {this.state.email}. </p>}
     let showYearBirth;
-    if (this.state.dateOfBirth) {showYearBirth = <p>Year of birth: {this.state.dateOfBirth}</p>}
+    if (this.state.dateOfBirth) {showYearBirth = <p className='joinp'> Year of birth: {this.state.dateOfBirth}.</p>}
     let showAddress;
-    if (this.state.address) {showAddress = <p>Address: {this.state.address}</p>}
+    if (this.state.address) {showAddress = <p className='joinp'>Address: {this.state.address}.  </p>}
     let showCity;
-    if (this.state.city) {showCity = <p>City: {this.state.city}</p>}
+    if (this.state.city) {showCity = <p className='joinp'> {this.state.city}.</p>}
     //Emergency contact - pack
     let contactSection;
     if ((this.state.contactname) || (this.state.relationshipcontact) || (this.state.contactphone) ){
       contactSection = <h4>EMERGENCY CONTACT:</h4>}
     let showContactName;
-    if (this.state.contactname) {showContactName = <p>Name: {this.state.contactname}</p>}
+    if (this.state.contactname) {showContactName = <p className='joinp'>Name: {this.state.contactname}. </p>}
     let showRelationshipContact;
-    if (this.state.relationshipcontact) {showRelationshipContact = <p>is his/her...: {this.state.relationshipcontact}</p>}
+    if (this.state.relationshipcontact) {showRelationshipContact = <p className='joinp'> (His/her...: {this.state.relationshipcontact}).</p>}
     let showContactPhone;
     if (this.state.contactphone) {showContactPhone = <p>Phone: {this.state.contactphone}</p>}
     //Emergency info - pack
@@ -68,19 +68,19 @@ class Public extends Component {
     if ((this.state.bloodGroup) || (this.state.diagnosis) || (this.state.drug) || (this.state.administration) || (this.state.ambulance) || (this.state.additionalInfo)) {
       emergencySection = <h4>EMERGENCY INFO:</h4>}
     let showBloodGroup;
-    if (this.state.bloodGroup) {showBloodGroup = <p>Blood group: {this.state.bloodGroup}</p>}
+    if (this.state.bloodGroup) {showBloodGroup = <p className='joinp'>Blood group: {this.state.bloodGroup}. </p>}
     let showAllergies;
-    if (this.state.allergies) {showAllergies =  <p>Allergies: {this.state.allergies}</p>}
+    if (this.state.allergies) {showAllergies =  <p className='joinp'> Allergies: {this.state.allergies}.</p>}
     let showDisease;
-    if (this.state.diagnosis) {showDisease =  <p>Disease: {this.state.diagnosis}</p>}
+    if (this.state.diagnosis) {showDisease =  <p>Disease: {this.state.diagnosis}.</p>}
     let showDrugs;
-    if (this.state.drug) {showDrugs =  <p>{this.state.username} needs this medication: {this.state.drug}</p>}
+    if (this.state.drug) {showDrugs =  <p className='joinp'>{this.state.username} needs this medication: {this.state.drug}. </p>}
     let showAdministration;
-    if (this.state.administration) {showAdministration =  <p>It must be administered in this way: {this.state.administration}</p>}
+    if (this.state.administration) {showAdministration =  <p className='joinp'> It must be administered in this way: {this.state.administration}.</p>}
     let showAmbulance;
-    if (this.state.ambulance) {showAmbulance =  <p>{this.state.username} needs you to call an ambulance: {this.state.ambulance}</p>}
+    if (this.state.ambulance) {showAmbulance =  <p>{this.state.username} needs you to call an ambulance: {this.state.ambulance}. </p>}
     let showAdditionalInfo;
-    if (this.state.additionalInfo) {showAdditionalInfo =  <p>Additional info: {this.state.additionalInfo}</p>}
+    if (this.state.additionalInfo) {showAdditionalInfo =  <p>Additional info: {this.state.additionalInfo}.</p>}
 
     if (this.state){
     return (
@@ -91,8 +91,7 @@ class Public extends Component {
       <div>
         {showEmail}
         {showYearBirth}
-        {showAddress}
-        {showCity}
+        <p>{showAddress}{showCity}</p>
       </div>
       <div className='publictitle'>{contactSection}</div>
       <div>
