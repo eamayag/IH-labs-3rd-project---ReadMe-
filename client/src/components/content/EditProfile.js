@@ -16,7 +16,7 @@ class Edit extends Component {
     };
 
     this.connection = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}/profile`,
+      baseURL: `${process.env.REACT_APP_API_URL}/api/profile`,
       withCredentials: true
     })
 
