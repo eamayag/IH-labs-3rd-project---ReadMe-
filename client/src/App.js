@@ -53,7 +53,9 @@ class App extends Component {
     const thisuser = this.state.loggedInUser;
     const title = <h1 className='title'>Welcome to ReadMe!</h1>;
     const info = <h2 className='info'>...what if a tag could save your life?</h2>;
-  
+    // const description = <h5>Sign up to have a NFC tag with all your emergency information. Let others know what you need when you can't say it!</h5>;
+    // const examples = <p><em>Patients, children, elderly... if you might need help anytime from unknown people, let ReadMe help you!</em></p>
+ 
     if(this.state.loggedInUser){
       return (
         <div className="App">
@@ -69,6 +71,7 @@ class App extends Component {
           </div>
         </div>
       );
+
     } else {
 
 
@@ -82,7 +85,7 @@ class App extends Component {
           <div>{info}</div>
           <br></br>
           <div>{title}</div>
-         
+          
             <Switch>
               <Route exact path={"/publicprofile/:id"} render={(id) => <Public id={id} />} />
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>

@@ -38,30 +38,60 @@ class Profile extends Component {
 
    render() {
     return this.state ? ( 
+    <div>
       <div>
         <div className='instructions'>
         <p>This is your NFC tag information.</p>
         <p><Link to='/edit'>Any update? (Click here!)</Link></p>
         </div>
-        <h4 className='profileinfo'>Your personal info:</h4>       
-          <p>Full name: {this.state.name}</p>
-          <p>email: {this.state.email}</p>
-          <p>Year of birth: {this.state.dateOfBirth}</p>
-          <p>Address: {this.state.address}</p>
-          <p>City: {this.state.city}</p>
-        <h4 className='profileinfo'>Your emergency contact:</h4>
-          <p>Name: {this.state.contactname}</p>
-          <p>is your... {this.state.relationshipcontact}</p>
-          <p>Phone: {this.state.contactphone} </p>
-        <h4 className='profileinfo'>Your medical info:</h4>
-          <p>Blood group: {this.state.bloodGroup}</p>
-          <p>Allergies: {this.state.allergies}</p>
-          <p>Disease: {this.state.diagnosis} </p>
-        <h4 className='profileinfo'>Your treatment info:</h4>
-          <p>I need this medication: {this.state.drug}</p>
-          <p>It must be administered in this way: {this.state.administration}</p>
-          <p>I need an ambulance: {this.state.ambulance} </p>
-          <p>Additional info: {this.state.additionalInfo} </p>
+
+        <div className='allinfo'>
+          <div className="card text-white bg-dark mb-3 mx-auto" style={{ width: '30rem'}}>
+            <h4 className='card-header profileinfo'>Your personal info:
+            </h4>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-warning">Full name: {this.state.name}</li>
+                <li className="list-group-item list-group-item-warning">email: {this.state.email}</li>
+                <li className="list-group-item list-group-item-warning">Year of birth: {this.state.dateOfBirth}</li>
+                <li className="list-group-item list-group-item-warning">Address: {this.state.address}</li>
+                <li className="list-group-item list-group-item-warning">Address: {this.state.city}</li>
+              </ul>
+          </div>
+
+          <div className="card text-white bg-dark mb-3 mx-auto" style={{ width: '30rem' }}>
+            <h4 className='card-header profileinfo'>Your emergency contact:
+            </h4>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-warning">Name: {this.state.contactname}</li>
+                <li className="list-group-item list-group-item-warning">is your... {this.state.relationshipcontact}</li>
+                <li className="list-group-item list-group-item-warning">Phone: {this.state.contactphone}</li>
+              </ul>
+          </div>
+
+          <div className="card text-white bg-dark mb-3 mx-auto" style={{ width: '30rem' }}>
+            <h4 className='card-header profileinfo'>Your medical info:
+            </h4>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-warning">Blood group: {this.state.bloodGroup}</li>
+                <li className="list-group-item list-group-item-warning">Allergies: {this.state.allergies}</li>
+              </ul>
+          </div>
+
+          <div className="card text-white bg-dark mb-3 mx-auto" style={{ width: '30rem' }}>
+            <h4 className='card-header profileinfo'>Your treatment info: 
+            </h4>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-warning">Disease: {this.state.diagnosis} </li>
+                <li className="list-group-item list-group-item-warning">I need this medication: {this.state.drug}</li>
+                <li className="list-group-item list-group-item-warning">It must be administered in this way: {this.state.administration}</li>
+                <li className="list-group-item list-group-item-warning">I need an ambulance: {this.state.ambulance} </li>
+                <li className="list-group-item list-group-item-warning">Additional info: {this.state.additionalInfo} </li>
+              </ul>
+            </div>
+          </div>
+            
+            
+        </div>
 
         <p className='instructions'><Link to={"/publicprofile/" + this.state._id}>See how others will see your profile</Link></p>
         <br></br>

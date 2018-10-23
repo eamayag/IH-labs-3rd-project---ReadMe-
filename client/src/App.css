@@ -16,7 +16,7 @@
   background-image: url('/black-background-blank-card-1111321.jpg');
   min-height: 95vh;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   color: gainsboro;
   text-align: center;
 }
@@ -78,6 +78,15 @@ input {
 .emergency{
   text-decoration-line: underline;
   text-decoration-color: red;
+}
+
+.allinfo {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.backcard {
+ background-color: green;
 }
 
 /* edit menu*/

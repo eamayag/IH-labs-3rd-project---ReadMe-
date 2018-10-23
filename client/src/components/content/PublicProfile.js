@@ -7,7 +7,6 @@ class Public extends Component {
     super(props);
     this.service = new PublicService();
     props.user ?  this.state = {match: props.id.match.params.id, loggedInUser: props.user} : this.state = {match: props.id.match.params.id}
-   
   }
   
   componentDidMount() {
@@ -37,6 +36,7 @@ class Public extends Component {
     .catch(err => console.log(err))
   }
 
+
   render() {
     //user logged
     let backButton='';
@@ -46,21 +46,21 @@ class Public extends Component {
     if ((this.state.email) || (this.state.dateOfBirth) || (this.state.address) || (this.state.city)) {
       userSection = <h4>Personal info:</h4>}
     let showEmail;
-    if (this.state.email) {showEmail = <p className='joinp'>email: {this.state.email}. </p>}
+    if (this.state.email) {showEmail = <p className='joinp'>email: {this.state.email}</p>}
     let showYearBirth;
-    if (this.state.dateOfBirth) {showYearBirth = <p className='joinp'> Year of birth: {this.state.dateOfBirth}.</p>}
+    if (this.state.dateOfBirth) {showYearBirth = <p className='joinp'> Year of birth: {this.state.dateOfBirth}</p>}
     let showAddress;
     if (this.state.address) {showAddress = <p className='joinp'>Address: {this.state.address}.  </p>}
     let showCity;
-    if (this.state.city) {showCity = <p className='joinp'> {this.state.city}.</p>}
+    if (this.state.city) {showCity = <p className='joinp'> {this.state.city}</p>}
     //Emergency contact - pack
     let contactSection;
     if ((this.state.contactname) || (this.state.relationshipcontact) || (this.state.contactphone) ){
       contactSection = <h4>EMERGENCY CONTACT:</h4>}
     let showContactName;
-    if (this.state.contactname) {showContactName = <p className='joinp'>Name: {this.state.contactname}. </p>}
+    if (this.state.contactname) {showContactName = <p className='joinp'>Name: {this.state.contactname}</p>}
     let showRelationshipContact;
-    if (this.state.relationshipcontact) {showRelationshipContact = <p className='joinp'> (His/her...: {this.state.relationshipcontact}).</p>}
+    if (this.state.relationshipcontact) {showRelationshipContact = <p className='joinp'> (His/her...: {this.state.relationshipcontact})</p>}
     let showContactPhone;
     if (this.state.contactphone) {showContactPhone = <p>Phone: {this.state.contactphone}</p>}
     //Emergency info - pack
@@ -68,46 +68,61 @@ class Public extends Component {
     if ((this.state.bloodGroup) || (this.state.diagnosis) || (this.state.drug) || (this.state.administration) || (this.state.ambulance) || (this.state.additionalInfo)) {
       emergencySection = <h4>EMERGENCY INFO:</h4>}
     let showBloodGroup;
-    if (this.state.bloodGroup) {showBloodGroup = <p className='joinp'>Blood group: {this.state.bloodGroup}. </p>}
+    if (this.state.bloodGroup) {showBloodGroup = <p className='joinp'>Blood group: {this.state.bloodGroup}</p>}
     let showAllergies;
-    if (this.state.allergies) {showAllergies =  <p className='joinp'> Allergies: {this.state.allergies}.</p>}
+    if (this.state.allergies) {showAllergies =  <p className='joinp'> Allergies: {this.state.allergies}</p>}
     let showDisease;
-    if (this.state.diagnosis) {showDisease =  <p>Disease: {this.state.diagnosis}.</p>}
+    if (this.state.diagnosis) {showDisease =  <p>Disease: {this.state.diagnosis}</p>}
     let showDrugs;
-    if (this.state.drug) {showDrugs =  <p className='joinp'>{this.state.username} needs this medication: {this.state.drug}. </p>}
+    if (this.state.drug) {showDrugs =  <p className='joinp'>{this.state.username} needs this medication: {this.state.drug}</p>}
     let showAdministration;
-    if (this.state.administration) {showAdministration =  <p className='joinp'> It must be administered in this way: {this.state.administration}.</p>}
+    if (this.state.administration) {showAdministration =  <p className='joinp'> It must be administered in this way: {this.state.administration}</p>}
     let showAmbulance;
-    if (this.state.ambulance) {showAmbulance =  <p>{this.state.username} needs you to call an ambulance: {this.state.ambulance}. </p>}
+    if (this.state.ambulance) {showAmbulance =  <p>{this.state.username} needs you to call an ambulance: {this.state.ambulance}</p>}
     let showAdditionalInfo;
-    if (this.state.additionalInfo) {showAdditionalInfo =  <p>Additional info: {this.state.additionalInfo}.</p>}
+    if (this.state.additionalInfo) {showAdditionalInfo =  <p>Additional info: {this.state.additionalInfo}</p>}
 
     if (this.state){
     return (
     <div>
-        <h2 className='publictitle'>This is an emergency <em>ReadMe!</em> profile</h2>
-        <h4 className='emergency'>If you're reading this, {this.state.name} probably needs your help!</h4>
-      <div className='publictitle'>{userSection}</div>
       <div>
-        {showEmail}
-        {showYearBirth}
-        <p>{showAddress}{showCity}</p>
-      </div>
-      <div className='publictitle'>{contactSection}</div>
-      <div>
-        {showContactName}
-        {showRelationshipContact}
-        {showContactPhone}
-      </div>  
-      <div className='publictitle'>{emergencySection}</div>
-      <div>
-        {showBloodGroup}
-        {showAllergies}
-        {showDisease}
-        {showDrugs}
-        {showAdministration}
-        {showAmbulance}
-        {showAdditionalInfo}
+          <h2 className='publictitle'>This is an emergency <em>ReadMe!</em> profile</h2>
+          <h4 className='emergency'>If you're reading this, {this.state.name} probably needs your help!</h4>
+        <div className='allinfo'>
+          <div className="card text-white bg-dark mb-3 mx-auto" style={{ width: '30rem'}}>
+            <div className='card-header'>{userSection}
+            </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-info">{showEmail}</li>
+                <li className="list-group-item list-group-item-info">{showYearBirth}</li>
+                <li className="list-group-item list-group-item-info">{showAddress}{showCity}</li>
+              </ul>
+          </div>
+
+          <div className="card mx-auto" style={{ width: '30rem' }}>
+            <div className='card-header'>{contactSection}
+            </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-info">{showContactName}</li>
+                <li className="list-group-item list-group-item-info">{showRelationshipContact}</li>
+                <li className="list-group-item list-group-item-info">{showContactPhone}</li>
+              </ul>
+          </div>
+
+          <div className="card" style={{ width: '30rem' }}>
+            <div className='card-header'>{emergencySection}
+            </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item list-group-item-info">{showBloodGroup}</li>
+                <li className="list-group-item list-group-item-info">{showAllergies}</li>
+                <li className="list-group-item list-group-item-info">{showDisease}</li>
+                <li className="list-group-item list-group-item-info">{showDrugs}</li>
+                <li className="list-group-item list-group-item-info">{showAdministration}</li>
+                <li className="list-group-item list-group-item-info">{showAmbulance}</li>
+                <li className="list-group-item list-group-item-info">{showAdditionalInfo}</li>
+              </ul>
+          </div>
+        </div>
       </div>
       <div className='publictitle'>
         {backButton}
