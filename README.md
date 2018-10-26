@@ -19,6 +19,7 @@ With this device they can wear always a helpful information for the person who's
 You'll now what he/she specifically needs, problems he/she could have, who to call, and what to do meanwhile.
 
 INSTRUCTIONS:
+
 User can register clinical info for an emergency response. 
 User must wear a NFC tag, which is linked to its public profile. 
 Emergency information is shown when the tag is read by approaching mobile phone.
@@ -26,6 +27,7 @@ Example of an emergency profile (this will be shown on your mobile when approach
 https://readme-emergencyapp.herokuapp.com/publicprofile/5bc99d5b7b7a3c001563cd85
 
 NFC use: 
+
 NFC works just by proximity; if your mobile have NFC you must activate it, and just approach the phone to
 the tag. The phone will open the browser with the info. 
 **Android use to have NFC reader by default.
