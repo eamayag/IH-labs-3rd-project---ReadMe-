@@ -16,7 +16,7 @@ Typical profiles for this need:
 - Specifically conditions that could need inmediate assistance: heart problems, hypoglycemia, diabetes...
 
 With this device they can wear always a helpful information for the person who's trying to give assistance. 
-You'll can now what he/she specifically needs, problems he/she could have, who to call, and what to do meanwhile.
+You'll now what he/she specifically needs, problems he/she could have, who to call, and what to do meanwhile.
 
 INSTRUCTIONS:
 User can register clinical info for an emergency response. 
